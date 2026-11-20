@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: official list, roadmap to the platinum, missables, and a saved checklist.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d24e2a'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='white' font-family='Georgia'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>Leonida Platinum</h1>
+    <p class="sub">Every one of the 55 official trophies — what it asks, how to get it, and whether it can be missed. Tick them off as you earn them; your progress stays in this browser.</p>
+  </div>
+  <div class="score" aria-label="Progress">
+    <div class="big"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <div class="bar"><div id="barFill"></div></div>
+    <p id="progressText">0% to the platinum</p>
+    <p class="grades">1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden</p>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Views">
+  <button class="tab active" data-view="checklist" role="tab" aria-selected="true">Checklist</button>
+  <button class="tab" data-view="roadmap" role="tab" aria-selected="false">Roadmap</button>
+  <button class="tab" data-view="missables" role="tab" aria-selected="false">Missables <span id="missCount" class="pill">13</span></button>
+  <button class="tab" data-view="nextup" role="tab" aria-selected="false">Next up</button>
+</nav>
+
+<section id="view-checklist" class="view">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search a trophy, mission or keyword…" aria-label="Search trophies">
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Kind
+      <select id="kindFilter">
+        <option value="all">All kinds</option>
+        <option value="story">Story &amp; completion</option>
+        <option value="mission">Story missions</option>
+        <option value="strand">Side strands</option>
+        <option value="activity">Activities</option>
+        <option value="collectible">Collectibles</option>
+        <option value="combat">Combat &amp; crime</option>
+        <option value="exploration">Exploration</option>
+        <option value="misc">Moments &amp; misc</option>
+        <option value="platinum">Platinum</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="remaining">Not earned yet</option>
+        <option value="earned">Earned</option>
+        <option value="missable">Missable only</option>
+      </select>
+    </label>
+    <label class="check"><input id="spoiler" type="checkbox"> Spoiler-safe: hide story trophies until earned</label>
+    <span class="spacer"></span>
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+    <button id="resetBtn" type="button" class="quiet">Reset</button>
+  </div>
+  <p id="resultCount" class="muted"></p>
+  <div class="layout">
+    <div>
+      <ol id="list" class="list"></ol>
+    </div>
+    <aside id="detail" class="detail" aria-live="polite">
+      <p class="muted">Select a trophy to see its full guide, sources and your note.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="view-roadmap" class="view hidden">
+  <h2>Roadmap to the platinum</h2>
+  <p>Built from the official descriptions: play in this order and nothing is left to a blind endgame grind. Story first, strands as they open, activities and collectibles while you travel, cleanup last.</p>
+  <div id="roadmap"></div>
+</section>
+
+<section id="view-missables" class="view hidden">
+  <h2>Missable trophies — do them when you see them</h2>
+  <p>These 13 are flagged from the official descriptions: one-time moments, a choice, or a scene that may not come back. GTA games usually let you replay story missions, so treat each flag as <strong>do it when the chance appears</strong>, not as a confirmed missable — the game may still let you replay it. Everything else on the list can be earned in free roam after the story.</p>
+  <div id="missableList"></div>
+</section>
+
+<section id="view-nextup" class="view hidden">
+  <h2>Next up</h2>
+  <p>What to chase next, in order: unearned missables first (they may not come back), then the story in order, then the grinds. Tick a trophy off and the list re-sorts itself.</p>
+  <ol id="nextList" class="nextlist"></ol>
+</section>
+
+<footer>
+  <p><strong>Sources.</strong> Trophy names, descriptions, grades and hidden flags: the official list as published on <span class="src">Exophase</span> and <span class="src">PSNProfiles</span> (the two agree on all 55); PSN progress targets (counts such as 42 Shooting Range challenges) from PSNProfiles. Each guide is written for this page from the official description alone — the game released 19 November 2026 and we have not played it, so where a place or step is not pinned down by the description, the guide says so instead of inventing one.</p>
+  <p><strong>Offline.</strong> This page loads only its own files — no network requests, no account, no sync. Progress is saved in this browser (localStorage) and can be exported to a file. No Rockstar Games logo, artwork or game screenshot is used anywhere on this page.</p>
+  <p class="muted">Fan-made guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by Rockstar Games. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
